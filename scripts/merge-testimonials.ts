@@ -6,6 +6,7 @@
  *
  * - Deduplicates by id
  * - Strips raw-only fields (url, fetchedAt)
+ * - Anonymizes author names from scraped data (privacy)
  * - Keeps existing hand-written testimonials
  * - Caps total per locale at --limit (default 20)
  *
@@ -31,13 +32,35 @@ function getLocaleFromFilename(filename: string): string | null {
   return null;
 }
 
-// Strip fields not needed by the website
+// Hand-written testimonial IDs start with "t" (e.g. t1, t2)
+// Scraped IDs start with platform prefix (e.g. ptt-, reddit-)
+const HAND_WRITTEN_ID = /^t\d+$/;
+
+// Anonymous labels per source
+const ANON_LABELS: Record<string, string> = {
+  PTT: "匿名車主",
+  Reddit: "Reddit User",
+  YouTube: "YouTube User",
+  Threads: "Threads User",
+  Mobile01: "匿名車主",
+  RedNote: "匿名用戶",
+  X: "匿名車主",
+  Facebook: "匿名車主",
+};
+
+// Anonymize author for scraped items (privacy)
+function anonymizeAuthor(item: Testimonial): string {
+  if (HAND_WRITTEN_ID.test(item.id)) return item.author;
+  return ANON_LABELS[item.source] || "匿名車主";
+}
+
+// Strip fields not needed by the website and anonymize authors
 function toWebsiteFormat(item: Testimonial): Testimonial {
   const clean: Testimonial = {
     id: item.id,
     content: item.content,
     source: item.source,
-    author: item.author,
+    author: anonymizeAuthor(item),
   };
   if (item.model) clean.model = item.model;
   if (item.rating) clean.rating = item.rating;
