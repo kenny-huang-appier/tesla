@@ -1,0 +1,82 @@
+[
+  {
+    "id": "model-3",
+    "name": "Model 3",
+    "tagline": "베스트셀링 전기 세단",
+    "image": "/images/model-3.jpg",
+    "startingPrice": "₩52,490,000",
+    "range": "554 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "6.1초 0-100",
+    "specs": [
+      { "label": "주행거리", "value": "554 km" },
+      { "label": "최고속도", "value": "201 km/h" },
+      { "label": "가속", "value": "6.1초" },
+      { "label": "마력", "value": "283 hp" }
+    ]
+  },
+  {
+    "id": "model-y",
+    "name": "Model Y",
+    "tagline": "세계 최고의 SUV",
+    "image": "/images/model-y.jpg",
+    "startingPrice": "₩58,490,000",
+    "range": "531 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "5.0초 0-100",
+    "specs": [
+      { "label": "주행거리", "value": "531 km" },
+      { "label": "최고속도", "value": "201 km/h" },
+      { "label": "가속", "value": "5.0초" },
+      { "label": "좌석", "value": "5-7인" }
+    ]
+  },
+  {
+    "id": "model-s",
+    "name": "Model S",
+    "tagline": "플래그십 세단",
+    "image": "/images/model-s.jpg",
+    "startingPrice": "₩119,990,000",
+    "range": "634 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.1초 0-100",
+    "specs": [
+      { "label": "주행거리", "value": "634 km" },
+      { "label": "최고속도", "value": "250 km/h" },
+      { "label": "가속", "value": "3.1초" },
+      { "label": "마력", "value": "670 hp" }
+    ]
+  },
+  {
+    "id": "model-x",
+    "name": "Model X",
+    "tagline": "팔콘 윙 SUV",
+    "image": "/images/model-x.jpg",
+    "startingPrice": "₩129,990,000",
+    "range": "576 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.9초 0-100",
+    "specs": [
+      { "label": "주행거리", "value": "576 km" },
+      { "label": "최고속도", "value": "250 km/h" },
+      { "label": "가속", "value": "3.9초" },
+      { "label": "좌석", "value": "5-7인" }
+    ]
+  },
+  {
+    "id": "cybertruck",
+    "name": "Cybertruck",
+    "tagline": "미래의 픽업 트럭",
+    "image": "/images/cybertruck.jpg",
+    "startingPrice": "$79,990",
+    "range": "547 km",
+    "topSpeed": "209 km/h",
+    "acceleration": "2.6초 0-100",
+    "specs": [
+      { "label": "주행거리", "value": "547 km" },
+      { "label": "최고속도", "value": "209 km/h" },
+      { "label": "가속", "value": "2.6초" },
+      { "label": "견인력", "value": "4,990 kg" }
+    ]
+  }
+]

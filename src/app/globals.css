@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-tesla-dark: #171a20;
+  --color-tesla-darker: #0d0f13;
+  --color-tesla-red: #e82127;
+  --color-tesla-red-hover: #c91c21;
+  --color-tesla-blue: #3e6ae1;
+  --color-tesla-gray: #393c41;
+  --color-tesla-light-gray: #5c5e62;
+  --color-tesla-silver: #a9abad;
+  --color-tesla-white: #f4f4f4;
+  --color-tesla-card: rgba(255, 255, 255, 0.05);
+  --color-tesla-card-hover: rgba(255, 255, 255, 0.08);
+  --color-tesla-border: rgba(255, 255, 255, 0.1);
+  --font-sans: "Inter", "Noto Sans TC", "Noto Sans JP", "Noto Sans KR",
+    system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-tesla-dark);
+  color: var(--color-tesla-white);
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: var(--color-tesla-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-tesla-border);
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  background: var(--color-tesla-card-hover);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tesla-light-gray);
+  border-radius: 3px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-tesla-red);
+  color: white;
 }

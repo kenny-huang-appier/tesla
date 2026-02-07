@@ -1,0 +1,82 @@
+[
+  {
+    "id": "model-3",
+    "name": "Model 3",
+    "tagline": "入門首選，性價比之王",
+    "image": "/images/model-3.jpg",
+    "startingPrice": "NT$ 1,349,900",
+    "range": "554 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "6.1 秒 0-100",
+    "specs": [
+      { "label": "續航", "value": "554 km" },
+      { "label": "極速", "value": "201 km/h" },
+      { "label": "加速", "value": "6.1 秒" },
+      { "label": "馬力", "value": "283 hp" }
+    ]
+  },
+  {
+    "id": "model-y",
+    "name": "Model Y",
+    "tagline": "全球銷量冠軍 SUV",
+    "image": "/images/model-y.jpg",
+    "startingPrice": "NT$ 1,759,900",
+    "range": "531 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "5.0 秒 0-100",
+    "specs": [
+      { "label": "續航", "value": "531 km" },
+      { "label": "極速", "value": "201 km/h" },
+      { "label": "加速", "value": "5.0 秒" },
+      { "label": "座位", "value": "5-7 人" }
+    ]
+  },
+  {
+    "id": "model-s",
+    "name": "Model S",
+    "tagline": "旗艦轎車，極致性能",
+    "image": "/images/model-s.jpg",
+    "startingPrice": "NT$ 3,099,900",
+    "range": "634 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.1 秒 0-100",
+    "specs": [
+      { "label": "續航", "value": "634 km" },
+      { "label": "極速", "value": "250 km/h" },
+      { "label": "加速", "value": "3.1 秒" },
+      { "label": "馬力", "value": "670 hp" }
+    ]
+  },
+  {
+    "id": "model-x",
+    "name": "Model X",
+    "tagline": "鷹翼門 SUV，科技旗艦",
+    "image": "/images/model-x.jpg",
+    "startingPrice": "NT$ 3,499,900",
+    "range": "576 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.9 秒 0-100",
+    "specs": [
+      { "label": "續航", "value": "576 km" },
+      { "label": "極速", "value": "250 km/h" },
+      { "label": "加速", "value": "3.9 秒" },
+      { "label": "座位", "value": "5-7 人" }
+    ]
+  },
+  {
+    "id": "cybertruck",
+    "name": "Cybertruck",
+    "tagline": "顛覆想像的未來皮卡",
+    "image": "/images/cybertruck.jpg",
+    "startingPrice": "US$ 79,990",
+    "range": "547 km",
+    "topSpeed": "209 km/h",
+    "acceleration": "2.6 秒 0-100",
+    "specs": [
+      { "label": "續航", "value": "547 km" },
+      { "label": "極速", "value": "209 km/h" },
+      { "label": "加速", "value": "2.6 秒" },
+      { "label": "拖曳", "value": "4,990 kg" }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "f1",
+    "question": "Is charging convenient? Will I have range anxiety?",
+    "answer": "Tesla's Supercharger network is the largest and most reliable in the world with over 50,000 stations globally. Home charging is even easier — just plug in overnight. For daily commutes, home charging is all you need. For road trips, Superchargers add about 170 miles in just 15 minutes."
+  },
+  {
+    "id": "f2",
+    "question": "Is EV maintenance expensive?",
+    "answer": "Quite the opposite! Tesla has no engine, transmission, or exhaust system. No oil changes, no spark plugs. Main maintenance items are tires, brakes, and cabin air filters. Annual maintenance costs are roughly 1/3 of a gas car."
+  },
+  {
+    "id": "f3",
+    "question": "How long does the battery last? Is replacement expensive?",
+    "answer": "Tesla batteries are warranted for 8 years or 100,000-150,000 miles depending on the model. Real-world data shows most owners retain over 90% battery capacity after 200,000 miles. Battery replacements are extremely rare."
+  },
+  {
+    "id": "f4",
+    "question": "What benefits does the referral link provide?",
+    "answer": "When you purchase a Tesla through a referral link, both the buyer and referrer receive referral rewards. Benefits vary with Tesla's current program but typically include Supercharging credits or other perks. It's a win-win!"
+  },
+  {
+    "id": "f5",
+    "question": "Does EV range drop significantly in winter?",
+    "answer": "Cold temperatures can reduce range by 10-30%. However, Tesla's heat pump system and battery preconditioning have significantly improved cold weather performance. In moderate climates, winter range impact is typically only 10-15%."
+  },
+  {
+    "id": "f6",
+    "question": "Is Autopilot safe?",
+    "answer": "Tesla's Autopilot is one of the most advanced driver assistance systems available. Data shows accident rates are significantly lower with Autopilot engaged. Note that it remains a 'driver assistance' system — drivers should always stay alert."
+  },
+  {
+    "id": "f7",
+    "question": "Do Teslas hold their value?",
+    "answer": "Tesla has among the best resale values in the EV market. Thanks to OTA updates that continuously improve vehicles, Tesla's retain their value better than most competitors. Model 3 and Model Y have particularly strong resale values."
+  }
+]

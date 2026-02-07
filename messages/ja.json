@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Why Tesla?",
+    "cta": "今すぐ注文"
+  },
+  "hero": {
+    "title": "なぜテスラを選ぶのか？",
+    "subtitle": "ただの車ではない — 未来へのパスポート",
+    "cta": "紹介リンクで注文する",
+    "secondaryCta": "詳しく見る"
+  },
+  "whyTesla": {
+    "sectionTitle": "なぜテスラ？",
+    "sectionSubtitle": "「欲しい」を「必要」に変える6つの理由",
+    "cards": {
+      "zeroEmission": {
+        "title": "ゼロエミッション",
+        "description": "100%電動、ゼロカーボン排出。地球環境に貢献しながら、最低の運転コストを実現。"
+      },
+      "safest": {
+        "title": "最も安全な車",
+        "description": "NHTSA 5つ星安全評価、最低の横転リスク。全モデルにアクティブセーフティ機能を標準搭載。"
+      },
+      "saveMoney": {
+        "title": "燃料費を大幅節約",
+        "description": "電気代はガソリン代のほんの一部。年間数十万円の節約に加え、メンテナンス費用もガソリン車の1/3。"
+      },
+      "otaUpdate": {
+        "title": "OTAアップデート",
+        "description": "スマホのように進化し続ける車。新機能、性能向上、安全パッチ — すべて寝ている間に完了。"
+      },
+      "autopilot": {
+        "title": "オートパイロット",
+        "description": "先進の運転支援システム。高速道路の車線変更、自動駐車、長距離ドライブのストレスを軽減。"
+      },
+      "supercharger": {
+        "title": "スーパーチャージャー",
+        "description": "世界最大の急速充電ネットワーク。わずか15分で275kmの航続距離を追加。長距離旅行も安心。"
+      }
+    }
+  },
+  "vehicles": {
+    "sectionTitle": "テスラ車種を探る",
+    "sectionSubtitle": "あなたにぴったりのテスラを見つけよう",
+    "startingAt": "価格",
+    "range": "航続距離",
+    "topSpeed": "最高速度",
+    "acceleration": "加速",
+    "orderNow": "今すぐ注文",
+    "specs": "詳細スペック"
+  },
+  "calculator": {
+    "sectionTitle": "どれだけ節約できる？",
+    "sectionSubtitle": "現在の燃料費を入力して、テスラでどれだけ節約できるか確認しよう",
+    "monthlyFuel": "月間燃料費 (JPY)",
+    "monthlyKm": "月間走行距離 (km)",
+    "fuelPrice": "ガソリン価格 (JPY/L)",
+    "electricityPrice": "電気料金 (JPY/kWh)",
+    "calculate": "節約額を計算",
+    "yearlySaving": "年間推定節約額",
+    "fiveyearSaving": "5年間推定節約額",
+    "twd": "JPY",
+    "treesEquivalent": "CO₂削減量は木 {count} 本分に相当",
+    "disclaimer": "* Tesla Model 3 の平均消費電力 14.5 kWh/100km で計算"
+  },
+  "stats": {
+    "sectionTitle": "数字が語る",
+    "globalOwners": "世界のオーナー",
+    "globalOwnersUnit": "万+",
+    "safetyRating": "安全評価",
+    "safetyRatingUnit": "つ星",
+    "superchargers": "スーパーチャージャー",
+    "superchargersUnit": "基+",
+    "countries": "販売国",
+    "countriesUnit": "ヶ国+"
+  },
+  "testimonials": {
+    "sectionTitle": "オーナーの声",
+    "sectionSubtitle": "実際のテスラオーナーからのリアルな声",
+    "filterAll": "すべて",
+    "filterPTT": "PTT",
+    "filterX": "X",
+    "filterRedNote": "小紅書",
+    "filterYouTube": "YouTube",
+    "filterFacebook": "Facebook"
+  },
+  "faq": {
+    "sectionTitle": "よくある質問",
+    "sectionSubtitle": "テスラ購入に関するよくある質問"
+  },
+  "cta": {
+    "title": "テスラファミリーに参加する準備はできましたか？",
+    "subtitle": "紹介リンクで注文して、限定特典を獲得",
+    "button": "紹介リンクで注文する",
+    "note": "紹介リンクを使用すると、あなたと紹介者の両方に特典があります"
+  },
+  "footer": {
+    "disclaimer": "本サイトは個人の紹介ページであり、Tesla公式サイトではありません。すべての商標はTesla, Inc.に帰属します。車両のスペックと価格はTesla公式サイトをご確認ください。",
+    "madeWith": "❤️ で作りました",
+    "referralNote": "紹介リンクでテスラを購入すると、双方に紹介特典があります"
+  }
+}

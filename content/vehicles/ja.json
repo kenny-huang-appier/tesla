@@ -1,0 +1,82 @@
+[
+  {
+    "id": "model-3",
+    "name": "Model 3",
+    "tagline": "ベストセラー電動セダン",
+    "image": "/images/model-3.jpg",
+    "startingPrice": "¥5,314,000",
+    "range": "554 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "6.1秒 0-100",
+    "specs": [
+      { "label": "航続距離", "value": "554 km" },
+      { "label": "最高速度", "value": "201 km/h" },
+      { "label": "加速", "value": "6.1秒" },
+      { "label": "馬力", "value": "283 hp" }
+    ]
+  },
+  {
+    "id": "model-y",
+    "name": "Model Y",
+    "tagline": "世界で最も売れているSUV",
+    "image": "/images/model-y.jpg",
+    "startingPrice": "¥6,390,000",
+    "range": "531 km",
+    "topSpeed": "201 km/h",
+    "acceleration": "5.0秒 0-100",
+    "specs": [
+      { "label": "航続距離", "value": "531 km" },
+      { "label": "最高速度", "value": "201 km/h" },
+      { "label": "加速", "value": "5.0秒" },
+      { "label": "座席数", "value": "5-7人" }
+    ]
+  },
+  {
+    "id": "model-s",
+    "name": "Model S",
+    "tagline": "フラッグシップセダン",
+    "image": "/images/model-s.jpg",
+    "startingPrice": "¥13,199,000",
+    "range": "634 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.1秒 0-100",
+    "specs": [
+      { "label": "航続距離", "value": "634 km" },
+      { "label": "最高速度", "value": "250 km/h" },
+      { "label": "加速", "value": "3.1秒" },
+      { "label": "馬力", "value": "670 hp" }
+    ]
+  },
+  {
+    "id": "model-x",
+    "name": "Model X",
+    "tagline": "ファルコンウィングSUV",
+    "image": "/images/model-x.jpg",
+    "startingPrice": "¥14,999,000",
+    "range": "576 km",
+    "topSpeed": "250 km/h",
+    "acceleration": "3.9秒 0-100",
+    "specs": [
+      { "label": "航続距離", "value": "576 km" },
+      { "label": "最高速度", "value": "250 km/h" },
+      { "label": "加速", "value": "3.9秒" },
+      { "label": "座席数", "value": "5-7人" }
+    ]
+  },
+  {
+    "id": "cybertruck",
+    "name": "Cybertruck",
+    "tagline": "未来のピックアップトラック",
+    "image": "/images/cybertruck.jpg",
+    "startingPrice": "$79,990",
+    "range": "547 km",
+    "topSpeed": "209 km/h",
+    "acceleration": "2.6秒 0-100",
+    "specs": [
+      { "label": "航続距離", "value": "547 km" },
+      { "label": "最高速度", "value": "209 km/h" },
+      { "label": "加速", "value": "2.6秒" },
+      { "label": "牽引力", "value": "4,990 kg" }
+    ]
+  }
+]

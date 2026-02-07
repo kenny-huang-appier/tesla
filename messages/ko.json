@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Why Tesla?",
+    "cta": "지금 주문"
+  },
+  "hero": {
+    "title": "왜 테슬라를 선택할까?",
+    "subtitle": "단순한 자동차가 아닌 — 미래로 가는 티켓",
+    "cta": "추천 링크로 주문하기",
+    "secondaryCta": "자세히 보기"
+  },
+  "whyTesla": {
+    "sectionTitle": "왜 테슬라인가?",
+    "sectionSubtitle": "'원하는 것'을 '필요한 것'으로 바꾸는 6가지 이유",
+    "cards": {
+      "zeroEmission": {
+        "title": "제로 배출",
+        "description": "100% 전기, 탄소 배출 제로. 지구를 위한 선택과 동시에 최저 운영 비용을 누리세요."
+      },
+      "safest": {
+        "title": "가장 안전한 차",
+        "description": "NHTSA 5성 안전 등급, 가장 낮은 전복 위험. 모든 모델에 능동 안전 기능 기본 탑재."
+      },
+      "saveMoney": {
+        "title": "연료비 절약",
+        "description": "전기 요금은 가솔린의 일부에 불과. 연간 수백만 원 절약에 정비 비용도 내연기관의 1/3."
+      },
+      "otaUpdate": {
+        "title": "OTA 업데이트",
+        "description": "스마트폰처럼 계속 진화하는 차. 새 기능, 성능 개선, 안전 패치 — 자는 동안 완료."
+      },
+      "autopilot": {
+        "title": "오토파일럿",
+        "description": "첨단 운전 보조 시스템. 고속도로 차선 변경, 자동 주차, 편안한 장거리 운전."
+      },
+      "supercharger": {
+        "title": "슈퍼차저 네트워크",
+        "description": "세계 최대 급속 충전 네트워크. 15분 만에 275km 주행거리 추가. 장거리 여행도 걱정 없이."
+      }
+    }
+  },
+  "vehicles": {
+    "sectionTitle": "테슬라 차량 탐색",
+    "sectionSubtitle": "나에게 맞는 테슬라를 찾아보세요",
+    "startingAt": "시작가",
+    "range": "주행거리",
+    "topSpeed": "최고속도",
+    "acceleration": "가속",
+    "orderNow": "지금 주문",
+    "specs": "상세 스펙"
+  },
+  "calculator": {
+    "sectionTitle": "얼마나 절약할 수 있을까?",
+    "sectionSubtitle": "현재 연료비를 입력하고 테슬라로 얼마나 절약할 수 있는지 확인하세요",
+    "monthlyFuel": "월 연료비 (KRW)",
+    "monthlyKm": "월 주행 거리 (km)",
+    "fuelPrice": "유류 가격 (KRW/L)",
+    "electricityPrice": "전기 요금 (KRW/kWh)",
+    "calculate": "절약액 계산",
+    "yearlySaving": "연간 예상 절약액",
+    "fiveyearSaving": "5년 예상 절약액",
+    "twd": "KRW",
+    "treesEquivalent": "CO₂ 감소량은 나무 {count}그루를 심은 것과 동일",
+    "disclaimer": "* Tesla Model 3 평균 소비전력 14.5 kWh/100km 기준"
+  },
+  "stats": {
+    "sectionTitle": "숫자가 말해준다",
+    "globalOwners": "전 세계 오너",
+    "globalOwnersUnit": "만+",
+    "safetyRating": "안전 등급",
+    "safetyRatingUnit": "성",
+    "superchargers": "슈퍼차저",
+    "superchargersUnit": "개+",
+    "countries": "판매 국가",
+    "countriesUnit": "개국+"
+  },
+  "testimonials": {
+    "sectionTitle": "오너들의 이야기",
+    "sectionSubtitle": "실제 테슬라 오너들의 생생한 후기",
+    "filterAll": "전체",
+    "filterPTT": "PTT",
+    "filterX": "X",
+    "filterRedNote": "小紅書",
+    "filterYouTube": "YouTube",
+    "filterFacebook": "Facebook"
+  },
+  "faq": {
+    "sectionTitle": "자주 묻는 질문",
+    "sectionSubtitle": "테슬라 구매에 관해 알아야 할 모든 것"
+  },
+  "cta": {
+    "title": "테슬라 가족이 될 준비가 되셨나요?",
+    "subtitle": "추천 링크로 주문하고 특별 혜택을 받으세요",
+    "button": "추천 링크로 주문하기",
+    "note": "추천 링크를 사용하면 구매자와 추천인 모두 혜택을 받습니다"
+  },
+  "footer": {
+    "disclaimer": "본 사이트는 개인 추천 페이지이며 Tesla 공식 사이트가 아닙니다. 모든 상표는 Tesla, Inc.에 귀속됩니다. 차량 사양 및 가격은 Tesla 공식 사이트를 참조하세요.",
+    "madeWith": "❤️로 만들었습니다",
+    "referralNote": "추천 링크로 테슬라를 구매하면 양쪽 모두 추천 보상을 받습니다"
+  }
+}

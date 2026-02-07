@@ -1,0 +1,58 @@
+[
+  {
+    "id": "t1",
+    "content": "Three years with my Model 3 and I can never go back to gas. Saving over $200/month on fuel, and maintenance costs are practically zero.",
+    "source": "X",
+    "author": "Tesla Owner",
+    "model": "Model 3"
+  },
+  {
+    "id": "t2",
+    "content": "The Model Y's space is unbelievable. Fits all our camping gear. Autopilot on the highway is a game-changer for road trips.",
+    "source": "YouTube",
+    "author": "Tesla Owner",
+    "model": "Model Y"
+  },
+  {
+    "id": "t3",
+    "content": "I was just going for a test drive. Ended up ordering one the same day. The acceleration is insane — it's a completely different driving experience.",
+    "source": "Facebook",
+    "author": "Tesla Owner",
+    "model": "Model 3"
+  },
+  {
+    "id": "t4",
+    "content": "Every OTA update feels like Christmas morning. My car keeps getting better over time. No other car manufacturer does this.",
+    "source": "X",
+    "author": "Tesla Owner",
+    "model": "Model S"
+  },
+  {
+    "id": "t5",
+    "content": "Installed a home charger and haven't been to a gas station in 2 years. Plug in at night, wake up to a full battery. It's like charging your phone.",
+    "source": "Facebook",
+    "author": "Tesla Owner",
+    "model": "Model Y"
+  },
+  {
+    "id": "t6",
+    "content": "Road-tripped across the country with zero range anxiety. Superchargers are everywhere and crazy fast. 15 minutes for a coffee break and you're good to go.",
+    "source": "YouTube",
+    "author": "Tesla Owner",
+    "model": "Model Y"
+  },
+  {
+    "id": "t7",
+    "content": "The silence is what gets you first. No engine noise, no vibrations. Getting into a Tesla feels like entering another dimension. The audio system sounds incredible too.",
+    "source": "RedNote",
+    "author": "Tesla Owner",
+    "model": "Model 3"
+  },
+  {
+    "id": "t8",
+    "content": "My wife was against buying an EV. After one drive, it became 'her' car. I only get to drive it on weekends now.",
+    "source": "X",
+    "author": "Tesla Owner",
+    "model": "Model Y"
+  }
+]

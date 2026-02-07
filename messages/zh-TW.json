@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Why Tesla?",
+    "cta": "立即訂購"
+  },
+  "hero": {
+    "title": "為何選擇特斯拉？",
+    "subtitle": "不只是一輛車，是你通往未來的入場券",
+    "cta": "使用推薦連結訂購",
+    "secondaryCta": "了解更多"
+  },
+  "whyTesla": {
+    "sectionTitle": "為何推薦特斯拉？",
+    "sectionSubtitle": "六大理由，讓你從「想要」變成「需要」",
+    "cards": {
+      "zeroEmission": {
+        "title": "零排放",
+        "description": "100% 純電驅動，零碳排放。為地球盡一份力，也享受最低的行駛成本。"
+      },
+      "safest": {
+        "title": "最安全的車",
+        "description": "NHTSA 五星安全評級，超低翻覆風險。全系列標配主動安全輔助系統。"
+      },
+      "saveMoney": {
+        "title": "省下大把油錢",
+        "description": "電費遠低於油費，每年可省下數萬元。保養成本也僅為燃油車的 1/3。"
+      },
+      "otaUpdate": {
+        "title": "OTA 空中更新",
+        "description": "像手機一樣持續進化。新功能、性能提升、安全修補，睡一覺就搞定。"
+      },
+      "autopilot": {
+        "title": "Autopilot 自動輔助駕駛",
+        "description": "先進的駕駛輔助系統，高速公路自動變換車道、自動停車，讓長途駕駛更輕鬆。"
+      },
+      "supercharger": {
+        "title": "超級充電網路",
+        "description": "全球最大的快充網路，15 分鐘補充 275 公里續航。長途旅行無憂。"
+      }
+    }
+  },
+  "vehicles": {
+    "sectionTitle": "探索 Tesla 車款",
+    "sectionSubtitle": "找到最適合你的 Tesla",
+    "startingAt": "起價",
+    "range": "續航",
+    "topSpeed": "極速",
+    "acceleration": "加速",
+    "orderNow": "立即訂購",
+    "specs": "詳細規格"
+  },
+  "calculator": {
+    "sectionTitle": "省多少？算給你看",
+    "sectionSubtitle": "輸入你目前的油費支出，看看轉換特斯拉能省多少",
+    "monthlyFuel": "每月油費 (TWD)",
+    "monthlyKm": "每月行駛里程 (km)",
+    "fuelPrice": "油價 (TWD/L)",
+    "electricityPrice": "電價 (TWD/kWh)",
+    "calculate": "計算節省金額",
+    "yearlySaving": "每年預估省下",
+    "fiveyearSaving": "五年預估省下",
+    "twd": "TWD",
+    "treesEquivalent": "相當於種下 {count} 棵樹的減碳量",
+    "disclaimer": "* 以 Tesla Model 3 平均能耗 14.5 kWh/100km 估算"
+  },
+  "stats": {
+    "sectionTitle": "數字會說話",
+    "globalOwners": "全球車主",
+    "globalOwnersUnit": "萬+",
+    "safetyRating": "安全評級",
+    "safetyRatingUnit": "星",
+    "superchargers": "超級充電站",
+    "superchargersUnit": "座+",
+    "countries": "銷售國家",
+    "countriesUnit": "國+"
+  },
+  "testimonials": {
+    "sectionTitle": "車主怎麼說？",
+    "sectionSubtitle": "來自真實車主的心聲",
+    "filterAll": "全部",
+    "filterPTT": "PTT",
+    "filterX": "X",
+    "filterRedNote": "小紅書",
+    "filterYouTube": "YouTube",
+    "filterFacebook": "Facebook"
+  },
+  "faq": {
+    "sectionTitle": "常見問題",
+    "sectionSubtitle": "關於購買特斯拉，你可能想知道的事"
+  },
+  "cta": {
+    "title": "準備好加入 Tesla 大家庭了嗎？",
+    "subtitle": "使用推薦連結訂購，享受專屬優惠",
+    "button": "使用推薦連結訂購",
+    "note": "透過推薦連結購買，你和推薦人都能獲得獎勵"
+  },
+  "footer": {
+    "disclaimer": "本網站為個人推薦頁面，非 Tesla 官方網站。所有商標均屬於 Tesla, Inc.。車輛規格與價格以 Tesla 官方網站為準。",
+    "madeWith": "用 ❤️ 製作",
+    "referralNote": "使用推薦連結購買 Tesla，雙方均可獲得推薦獎勵"
+  }
+}

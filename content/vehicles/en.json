@@ -1,0 +1,82 @@
+[
+  {
+    "id": "model-3",
+    "name": "Model 3",
+    "tagline": "The best-selling electric sedan",
+    "image": "/images/model-3.jpg",
+    "startingPrice": "$38,990",
+    "range": "341 miles",
+    "topSpeed": "125 mph",
+    "acceleration": "5.8s 0-60",
+    "specs": [
+      { "label": "Range", "value": "341 miles" },
+      { "label": "Top Speed", "value": "125 mph" },
+      { "label": "0-60 mph", "value": "5.8s" },
+      { "label": "Horsepower", "value": "283 hp" }
+    ]
+  },
+  {
+    "id": "model-y",
+    "name": "Model Y",
+    "tagline": "The world's best-selling SUV",
+    "image": "/images/model-y.jpg",
+    "startingPrice": "$44,990",
+    "range": "310 miles",
+    "topSpeed": "125 mph",
+    "acceleration": "4.8s 0-60",
+    "specs": [
+      { "label": "Range", "value": "310 miles" },
+      { "label": "Top Speed", "value": "125 mph" },
+      { "label": "0-60 mph", "value": "4.8s" },
+      { "label": "Seating", "value": "5-7" }
+    ]
+  },
+  {
+    "id": "model-s",
+    "name": "Model S",
+    "tagline": "Flagship sedan, ultimate performance",
+    "image": "/images/model-s.jpg",
+    "startingPrice": "$74,990",
+    "range": "402 miles",
+    "topSpeed": "155 mph",
+    "acceleration": "3.1s 0-60",
+    "specs": [
+      { "label": "Range", "value": "402 miles" },
+      { "label": "Top Speed", "value": "155 mph" },
+      { "label": "0-60 mph", "value": "3.1s" },
+      { "label": "Horsepower", "value": "670 hp" }
+    ]
+  },
+  {
+    "id": "model-x",
+    "name": "Model X",
+    "tagline": "Falcon Wing SUV, tech flagship",
+    "image": "/images/model-x.jpg",
+    "startingPrice": "$79,990",
+    "range": "348 miles",
+    "topSpeed": "155 mph",
+    "acceleration": "3.8s 0-60",
+    "specs": [
+      { "label": "Range", "value": "348 miles" },
+      { "label": "Top Speed", "value": "155 mph" },
+      { "label": "0-60 mph", "value": "3.8s" },
+      { "label": "Seating", "value": "5-7" }
+    ]
+  },
+  {
+    "id": "cybertruck",
+    "name": "Cybertruck",
+    "tagline": "The future of pickup trucks",
+    "image": "/images/cybertruck.jpg",
+    "startingPrice": "$79,990",
+    "range": "340 miles",
+    "topSpeed": "130 mph",
+    "acceleration": "2.6s 0-60",
+    "specs": [
+      { "label": "Range", "value": "340 miles" },
+      { "label": "Top Speed", "value": "130 mph" },
+      { "label": "0-60 mph", "value": "2.6s" },
+      { "label": "Towing", "value": "11,000 lbs" }
+    ]
+  }
+]

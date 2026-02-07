@@ -1,0 +1,102 @@
+{
+  "header": {
+    "title": "Why Tesla?",
+    "cta": "Order Now"
+  },
+  "hero": {
+    "title": "Why Choose Tesla?",
+    "subtitle": "More than a car — it's your ticket to the future",
+    "cta": "Order with Referral Link",
+    "secondaryCta": "Learn More"
+  },
+  "whyTesla": {
+    "sectionTitle": "Why Tesla?",
+    "sectionSubtitle": "Six reasons to turn your 'want' into a 'need'",
+    "cards": {
+      "zeroEmission": {
+        "title": "Zero Emissions",
+        "description": "100% electric, zero carbon emissions. Do your part for the planet while enjoying the lowest operating costs."
+      },
+      "safest": {
+        "title": "Safest Cars Ever",
+        "description": "NHTSA 5-star safety rating with the lowest rollover risk. Active safety features come standard on every model."
+      },
+      "saveMoney": {
+        "title": "Save on Fuel",
+        "description": "Electricity costs a fraction of gasoline. Save thousands per year on fuel, plus maintenance costs are 1/3 of ICE vehicles."
+      },
+      "otaUpdate": {
+        "title": "OTA Updates",
+        "description": "Your car keeps getting better, like your phone. New features, performance improvements, and safety patches — all while you sleep."
+      },
+      "autopilot": {
+        "title": "Autopilot",
+        "description": "Advanced driver assistance for highway lane changes, auto-parking, and stress-free long-distance driving."
+      },
+      "supercharger": {
+        "title": "Supercharger Network",
+        "description": "The world's largest fast-charging network. Add 170 miles of range in just 15 minutes. Road trips made easy."
+      }
+    }
+  },
+  "vehicles": {
+    "sectionTitle": "Explore Tesla Vehicles",
+    "sectionSubtitle": "Find the Tesla that's right for you",
+    "startingAt": "Starting at",
+    "range": "Range",
+    "topSpeed": "Top Speed",
+    "acceleration": "Acceleration",
+    "orderNow": "Order Now",
+    "specs": "Full Specs"
+  },
+  "calculator": {
+    "sectionTitle": "See How Much You'll Save",
+    "sectionSubtitle": "Enter your current fuel costs and see how much you could save with Tesla",
+    "monthlyFuel": "Monthly Fuel Cost (USD)",
+    "monthlyKm": "Monthly Driving Distance (miles)",
+    "fuelPrice": "Gas Price (USD/gal)",
+    "electricityPrice": "Electricity Price (USD/kWh)",
+    "calculate": "Calculate Savings",
+    "yearlySaving": "Estimated Yearly Savings",
+    "fiveyearSaving": "Estimated 5-Year Savings",
+    "twd": "USD",
+    "treesEquivalent": "Equivalent to planting {count} trees in CO₂ reduction",
+    "disclaimer": "* Based on Tesla Model 3 average consumption of 14.5 kWh/100km"
+  },
+  "stats": {
+    "sectionTitle": "The Numbers Speak",
+    "globalOwners": "Global Owners",
+    "globalOwnersUnit": "M+",
+    "safetyRating": "Safety Rating",
+    "safetyRatingUnit": "Stars",
+    "superchargers": "Superchargers",
+    "superchargersUnit": "+",
+    "countries": "Countries",
+    "countriesUnit": "+"
+  },
+  "testimonials": {
+    "sectionTitle": "What Owners Say",
+    "sectionSubtitle": "Real stories from real Tesla owners",
+    "filterAll": "All",
+    "filterPTT": "PTT",
+    "filterX": "X",
+    "filterRedNote": "RedNote",
+    "filterYouTube": "YouTube",
+    "filterFacebook": "Facebook"
+  },
+  "faq": {
+    "sectionTitle": "FAQ",
+    "sectionSubtitle": "Everything you need to know about buying a Tesla"
+  },
+  "cta": {
+    "title": "Ready to Join the Tesla Family?",
+    "subtitle": "Order with a referral link for exclusive benefits",
+    "button": "Order with Referral Link",
+    "note": "Both you and the referrer receive rewards when you use a referral link"
+  },
+  "footer": {
+    "disclaimer": "This is a personal referral page, not an official Tesla website. All trademarks belong to Tesla, Inc. Vehicle specs and pricing are subject to change — refer to Tesla's official site.",
+    "madeWith": "Made with ❤️",
+    "referralNote": "Purchase Tesla with a referral link — both parties receive referral rewards"
+  }
+}
