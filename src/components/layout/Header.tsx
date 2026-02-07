@@ -31,7 +31,7 @@ export default function Header() {
             <Zap className="w-6 h-6 text-tesla-red" />
             <span>{t("title")}</span>
           </a>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             <LanguageSwitcher />
             <Button
               variant="primary"

@@ -60,40 +60,40 @@ export default function VehicleShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="glass-card p-8 md:p-12"
+            className="glass-card p-5 sm:p-8 md:p-12"
           >
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left: info */}
               <div>
-                <h3 className="text-4xl md:text-5xl font-black mb-2">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-2">
                   {active.name}
                 </h3>
                 <p className="text-tesla-silver text-lg mb-6">
                   {active.tagline}
                 </p>
 
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  <div className="text-center p-4 rounded-lg bg-white/5">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
+                  <div className="text-center p-2 sm:p-4 rounded-lg bg-white/5">
                     <Battery className="w-5 h-5 mx-auto mb-2 text-tesla-red" />
                     <p className="text-xs text-tesla-silver">{t("range")}</p>
-                    <p className="font-bold">{active.range}</p>
+                    <p className="text-sm sm:text-base font-bold">{active.range}</p>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-white/5">
+                  <div className="text-center p-2 sm:p-4 rounded-lg bg-white/5">
                     <Gauge className="w-5 h-5 mx-auto mb-2 text-tesla-red" />
                     <p className="text-xs text-tesla-silver">{t("topSpeed")}</p>
-                    <p className="font-bold">{active.topSpeed}</p>
+                    <p className="text-sm sm:text-base font-bold">{active.topSpeed}</p>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-white/5">
+                  <div className="text-center p-2 sm:p-4 rounded-lg bg-white/5">
                     <Timer className="w-5 h-5 mx-auto mb-2 text-tesla-red" />
                     <p className="text-xs text-tesla-silver">
                       {t("acceleration")}
                     </p>
-                    <p className="font-bold">{active.acceleration}</p>
+                    <p className="text-sm sm:text-base font-bold">{active.acceleration}</p>
                   </div>
                 </div>
 
-                <p className="text-2xl font-bold mb-6">
-                  <span className="text-sm text-tesla-silver font-normal">
+                <p className="text-xl sm:text-2xl font-bold mb-6">
+                  <span className="text-xs sm:text-sm text-tesla-silver font-normal">
                     {t("startingAt")}{" "}
                   </span>
                   {active.startingPrice}

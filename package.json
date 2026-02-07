@@ -17,7 +17,8 @@
     "fetch:threads": "tsx scripts/scrapers/threads.ts",
     "fetch:mobile01": "tsx scripts/scrapers/mobile01.ts",
     "fetch:rednote": "tsx scripts/scrapers/rednote.ts",
-    "fetch:all": "tsx scripts/fetch-testimonials.ts"
+    "fetch:all": "tsx scripts/fetch-testimonials.ts",
+    "merge:testimonials": "tsx scripts/merge-testimonials.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

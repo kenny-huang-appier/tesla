@@ -22,14 +22,14 @@ export default function StatsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <RevealOnScroll key={s.key} delay={i * 0.1}>
-              <div className="text-center p-8">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-black text-tesla-white">
+              <div className="text-center p-4 sm:p-8">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-tesla-white whitespace-nowrap">
                   <AnimatedCounter target={s.value} />
-                  <span className="text-tesla-red text-2xl md:text-3xl ml-1">
+                  <span className="text-tesla-red text-xl sm:text-2xl md:text-3xl ml-1">
                     {t(`${s.key}Unit`)}
                   </span>
                 </div>
-                <p className="text-tesla-silver mt-3 text-lg">{t(s.key)}</p>
+                <p className="text-tesla-silver mt-3 text-sm sm:text-lg">{t(s.key)}</p>
               </div>
             </RevealOnScroll>
           ))}

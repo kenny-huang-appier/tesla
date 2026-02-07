@@ -33,7 +33,7 @@ export default function CTASection() {
               size="lg"
               href={getReferralLink(locale)}
               external
-              className="text-xl px-12 py-5"
+              className="text-base sm:text-xl px-8 sm:px-12 py-4 sm:py-5"
             >
               {t("button")}
               <ExternalLink className="w-5 h-5 ml-2" />

@@ -41,8 +41,8 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-tesla-silver hover:text-tesla-white transition-colors cursor-pointer"
       >
-        <Globe className="w-4 h-4" />
-        <span>{localeNames[locale]}</span>
+        <Globe className="w-4 h-4 shrink-0" />
+        <span className="hidden sm:inline">{localeNames[locale]}</span>
       </button>
       {open && (
         <div className="absolute right-0 top-full mt-2 py-1 min-w-[140px] glass-card z-50">
