@@ -18,10 +18,12 @@ export interface VehicleSpec {
 export interface Testimonial {
   id: string;
   content: string;
-  source: "PTT" | "X" | "RedNote" | "YouTube" | "Facebook";
+  source: "PTT" | "X" | "RedNote" | "YouTube" | "Facebook" | "Reddit" | "Threads" | "Mobile01";
   author: string;
   model?: string;
   rating?: number;
+  url?: string;
+  fetchedAt?: string;
 }
 
 export interface FAQ {

@@ -10,7 +10,14 @@
     "lint": "eslint",
     "pages:build": "npx @opennextjs/cloudflare build",
     "pages:deploy": "pnpm run pages:build && wrangler deploy",
-    "pages:dev": "pnpm run pages:build && wrangler dev"
+    "pages:dev": "pnpm run pages:build && wrangler dev",
+    "fetch:youtube": "tsx scripts/scrapers/youtube.ts",
+    "fetch:reddit": "tsx scripts/scrapers/reddit.ts",
+    "fetch:ptt": "tsx scripts/scrapers/ptt.ts",
+    "fetch:threads": "tsx scripts/scrapers/threads.ts",
+    "fetch:mobile01": "tsx scripts/scrapers/mobile01.ts",
+    "fetch:rednote": "tsx scripts/scrapers/rednote.ts",
+    "fetch:all": "tsx scripts/fetch-testimonials.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -27,9 +34,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.2.4",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "wrangler": "^4.63.0"
   }

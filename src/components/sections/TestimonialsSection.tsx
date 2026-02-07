@@ -14,6 +14,9 @@ const sourceColors: Record<string, string> = {
   RedNote: "bg-red-500/20 text-red-400",
   YouTube: "bg-red-600/20 text-red-400",
   Facebook: "bg-blue-600/20 text-blue-400",
+  Reddit: "bg-orange-500/20 text-orange-400",
+  Threads: "bg-purple-500/20 text-purple-400",
+  Mobile01: "bg-green-500/20 text-green-400",
 };
 
 const filterKeys = [
@@ -23,6 +26,9 @@ const filterKeys = [
   "filterRedNote",
   "filterYouTube",
   "filterFacebook",
+  "filterReddit",
+  "filterThreads",
+  "filterMobile01",
 ] as const;
 
 const sourceMap: Record<string, string | null> = {
@@ -32,6 +38,9 @@ const sourceMap: Record<string, string | null> = {
   filterRedNote: "RedNote",
   filterYouTube: "YouTube",
   filterFacebook: "Facebook",
+  filterReddit: "Reddit",
+  filterThreads: "Threads",
+  filterMobile01: "Mobile01",
 };
 
 export default function TestimonialsSection() {

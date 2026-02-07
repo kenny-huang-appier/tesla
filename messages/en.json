@@ -82,7 +82,10 @@
     "filterX": "X",
     "filterRedNote": "RedNote",
     "filterYouTube": "YouTube",
-    "filterFacebook": "Facebook"
+    "filterFacebook": "Facebook",
+    "filterReddit": "Reddit",
+    "filterThreads": "Threads",
+    "filterMobile01": "Mobile01"
   },
   "faq": {
     "sectionTitle": "FAQ",

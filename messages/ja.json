@@ -82,7 +82,10 @@
     "filterX": "X",
     "filterRedNote": "小紅書",
     "filterYouTube": "YouTube",
-    "filterFacebook": "Facebook"
+    "filterFacebook": "Facebook",
+    "filterReddit": "Reddit",
+    "filterThreads": "Threads",
+    "filterMobile01": "Mobile01"
   },
   "faq": {
     "sectionTitle": "よくある質問",
