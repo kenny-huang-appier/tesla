@@ -127,10 +127,23 @@
   .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
   .topbar__name { font-family: var(--font-latin); font-size: calc(14px * var(--fs)); font-weight: 500; letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; }
   .topbar__name span { color: var(--muted-light); font-weight: 400; }
-  .topbar__nav { display: none; gap: 28px; font-size: calc(14px * var(--fs)); }
-  .topbar__nav a { text-decoration: none; color: var(--muted-light); transition: color .2s; }
-  .topbar__nav a:hover { color: var(--text-light); }
-  @media (min-width: 980px) { .topbar__nav { display: flex; } }
+  /* Section index: always visible under the top bar. */
+  .subnav { height: 44px; border-top: 1px solid var(--line-dark); background: rgba(0,0,0,.55); }
+  .topbar.is-solid .subnav { background: transparent; }
+  .subnav__track {
+    display: flex; align-items: center; gap: 4px; height: 44px;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .subnav__track::-webkit-scrollbar { display: none; }
+  @media (min-width: 980px) { .subnav__track { justify-content: center; } }
+  .subnav a {
+    flex: none; padding: 6px 12px; border-radius: 999px;
+    font-size: 13px; letter-spacing: .04em; white-space: nowrap;
+    color: var(--muted-light); text-decoration: none;
+    transition: color .2s, background-color .2s;
+  }
+  .subnav a:hover { color: var(--text-light); }
+  .subnav a[aria-current="true"] { color: var(--ink); background: var(--text-light); }
 
   .topbar__actions { display: flex; align-items: center; gap: 8px; }
   .topbar, .dock { --fs: 1; }
@@ -166,40 +179,59 @@
     position: relative;
     min-height: 100svh;
     display: flex; align-items: flex-end;
-    background:
-      radial-gradient(90% 60% at 80% 30%, #1d1e21 0%, rgba(12,12,13,0) 70%),
-      var(--ink);
+    background: #000;
     color: var(--text-light);
     overflow: hidden;
   }
-  .hero__grid { display: grid; gap: 40px; align-items: end; }
-  @media (min-width: 820px) { .hero__grid { grid-template-columns: 1fr minmax(180px, 240px); gap: 64px; } }
-  .stall { display: block; color: var(--silver); text-decoration: none; max-width: 240px; }
-  .stall svg { display: block; width: 100%; height: auto; }
-  .stall__lines { fill: none; stroke: #e9e9e6; stroke-width: 6; stroke-linecap: square; opacity: .85; }
-  .stall__level { font: 500 22px var(--font-mono); letter-spacing: .2em; fill: var(--muted-light); }
-  .stall__no { font: 600 86px var(--font-latin); font-stretch: 75%; letter-spacing: .02em; fill: #e9e9e6; opacity: .9; }
-  .stall__arrow { fill: none; stroke: var(--muted-light); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-  .stall__caption { display: block; margin-top: 12px; font: 400 calc(12px * var(--fs)) var(--font-mono); letter-spacing: .12em; color: var(--muted-light); }
-  .stall:hover .stall__caption { color: var(--text-light); }
-  @media (max-width: 819px) {
-    .stall { display: grid; grid-template-columns: 96px 1fr; align-items: end; gap: 16px; max-width: none; }
-    .stall__caption { margin: 0 0 6px; }
+  .hero__bg { --hero-max: 1440px; position: absolute; z-index: 0; right: max(0px, calc((100% - var(--hero-max)) / 2)); top: 100px; width: min(68vw, 1180px); }
+  .hero__bg img { display: block; width: 100%; height: auto; }
+  .hero__bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, #000 100%), linear-gradient(270deg, rgba(0,0,0,0) 80%, #000 100%);
   }
-  @media (max-width: 719px) {
-    .hero { display: block; min-height: 0; }
-    .hero .hero__body { padding-top: 96px; padding-bottom: 36px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(90deg, #000 0%, rgba(0,0,0,.7) 28%, rgba(0,0,0,0) 46%),
+      linear-gradient(0deg, #000 0%, rgba(0,0,0,.6) 26%, rgba(0,0,0,0) 48%);
+  }
+  .hero__text { max-width: 640px; }
+  .hero__credit, .band__credit {
+    position: absolute; z-index: 2; top: 116px;
+    right: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+    font: 400 calc(12px * var(--fs)) var(--font-body); letter-spacing: .06em; color: rgba(255,255,255,.72);
+    text-shadow: 0 1px 6px rgba(0,0,0,.8);
+  }
+  .hero__where {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+    font: 400 calc(13px * var(--fs)) var(--font-mono); letter-spacing: .1em;
+    color: var(--silver); text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.25); padding-bottom: 4px;
+  }
+  .hero__where:hover { color: var(--text-light); border-bottom-color: var(--text-light); }
+  .hero__where svg { width: 14px; height: 14px; }
+  @media (max-width: 719px), (orientation: portrait), (max-height: 560px) {
+    .hero { display: block; min-height: 0; padding-top: 100px; }
+    .hero__bg { position: relative; inset: auto; width: auto; display: block; aspect-ratio: 2000 / 1170; }
+    .hero__bg::after {
+      content: ""; position: absolute; inset: auto 0 0 0; height: 40%;
+      background: linear-gradient(0deg, #000, rgba(0,0,0,0));
+    }
+    .hero__bg img { height: 100%; object-fit: cover; }
+    .hero::before { display: none; }
+    .hero__credit { top: 108px; }
+    .hero .hero__body { padding-top: 8px; padding-bottom: 36px; }
     .hero .hero__foot { margin-top: 28px; padding-top: 20px; }
     .hero__actions .btn { flex: 1 1 0; }
   }
-  .hero__body { position: relative; z-index: 2; width: 100%; padding-top: 120px; padding-bottom: 48px; }
+  .hero__body { position: relative; z-index: 2; width: 100%; padding-top: 160px; padding-bottom: 48px; }
   .hero .eyebrow { color: var(--muted-light); }
   .hero h1 {
     margin-top: 18px;
     font-family: var(--font-latin);
     font-weight: 300;
     font-stretch: 112%;
-    font-size: clamp(40px, 8.4vw, 104px);
+    font-size: clamp(40px, 6.6vw, 92px);
     line-height: 0.98;
     letter-spacing: -0.02em;
   }
@@ -228,7 +260,7 @@
   .hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
   /* ---------- Sections ---------- */
-  section { scroll-margin-top: 56px; }
+  section { scroll-margin-top: 100px; }
   .section { padding: 72px 0; }
   @media (min-width: 720px) { .section { padding: 128px 0; } }
   .section--dark { background: var(--ink); color: var(--text-light); }
@@ -307,6 +339,29 @@
   }
   .section--dark .callout { border-left-color: var(--silver); background: rgba(255,255,255,.03); }
 
+
+  /* ---------- Night band ---------- */
+  .band { position: relative; background: #000; color: var(--text-light); overflow: hidden; }
+  .band__media { display: block; position: relative; }
+  .band__media img { display: block; width: 100%; height: auto; }
+  .band__text { position: relative; padding-top: 28px; padding-bottom: 56px; }
+  .band h2 { margin-top: 10px; font-size: calc(26px * var(--fs)); font-weight: 500; letter-spacing: .04em; }
+  .band__copy p:last-child { margin-top: 12px; color: #c9cbd0; font-size: calc(15px * var(--fs)); max-width: 26em; }
+  .band .eyebrow { color: var(--muted-light); }
+  .band__credit { top: 12px; }
+  @media (max-width: 899px), (orientation: portrait), (max-height: 560px) {
+    .band__media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(0deg, #000, rgba(0,0,0,0)); }
+  }
+  @media (min-width: 900px) and (orientation: landscape) and (min-height: 561px) {
+    .band__media::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(270deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 30%, rgba(0,0,0,0) 50%),
+                  linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 30%), linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,0) 15%);
+    }
+    .band__text { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-end; padding-top: 0; padding-bottom: clamp(32px, 6vw, 80px); z-index: 1; }
+    .band__copy { max-width: 400px; }
+    .band h2 { font-size: calc(32px * var(--fs)); }
+  }
 
   /* ---------- Visit ---------- */
   .visit { display: grid; gap: 24px; }
@@ -515,41 +570,42 @@
 <header class="topbar" id="topbar">
   <div class="wrap">
     <a class="topbar__name" href="#top">Model Y <span>Launch Series</span></a>
-    <nav class="topbar__nav" aria-label="頁面導覽">
-      <a href="#visit">下樓看車</a>
-      <a href="#launch">Launch Series</a>
-      <a href="#exterior">外觀與保護</a>
-      <a href="#condition">車況</a>
-      <a href="#software">軟體</a>
-      <a href="#price">價格</a>
-    </nav>
     <div class="topbar__actions">
       <button class="fs-toggle" id="fs-toggle" type="button" aria-label="字級 標準，點一下切換為大">字級 <span aria-hidden="true">A</span></button>
       <a class="btn btn--light btn--sm" href="https://line.me/ti/p/weX-WQHvTo" target="_blank" rel="noopener">LINE 聯絡</a>
     </div>
   </div>
+  <nav class="subnav" id="subnav" aria-label="頁面索引">
+    <div class="subnav__track wrap">
+      <a href="#highlights">規格</a>
+      <a href="#visit">看車</a>
+      <a href="#launch">Launch Series</a>
+      <a href="#exterior">外觀</a>
+      <a href="#interior">內裝</a>
+      <a href="#condition">車況</a>
+      <a href="#software">軟體</a>
+      <a href="#price">價格</a>
+      <a href="#contact">聯絡</a>
+    </div>
+  </nav>
 </header>
 
 <main id="top">
   <!-- 1. Hero -->
   <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg">
+      <img src="images/hero.jpg" srcset="images/hero-m.jpg 1200w, images/hero.jpg 2000w"
+           sizes="(max-width: 719px) 100vw, (orientation: portrait) 100vw, (max-height: 560px) 100vw, (min-width: 1736px) 1180px, 68vw"
+           alt="Tesla Model Y 車體示意圖（非實車照片）" width="2000" height="1170" fetchpriority="high">
+    </div>
+    <span class="hero__credit" aria-hidden="true">示意圖，非實車照片</span>
     <div class="hero__body wrap">
-      <div class="hero__grid">
       <div class="hero__text">
       <p class="eyebrow">車主自售 · Private Sale</p>
       <h1 id="hero-title"><span class="year">2025 Tesla</span>Model Y <strong>Launch Series</strong></h1>
       <p class="hero__meta">Quicksilver<i>/</i>Long Range AWD<i>/</i>22,000 km</p>
-      <p class="hero__sub">Launch Series 首發限量版本，全車 3M 200G 保護膜，完整原廠設定。實車就停在社區 B1-027，下樓就看得到。</p>
-      </div>
-      <a class="stall" href="#visit" aria-label="實車位置：社區 B1 停車場 027 車位，查看看車方式">
-        <svg viewBox="0 0 240 320" aria-hidden="true">
-          <path class="stall__lines" d="M24 8V312M216 8V312M24 312H216"/>
-          <text class="stall__level" x="120" y="64" text-anchor="middle">B1</text>
-          <text class="stall__no" x="120" y="270" text-anchor="middle">027</text>
-          <path class="stall__arrow" d="M120 96v84m-18-18l18 18 18-18"/>
-        </svg>
-        <span class="stall__caption">實車位置・B1-027</span>
-      </a>
+      <p class="hero__sub">Launch Series 首發限量版本，全車 3M 200G 保護膜，完整原廠設定。實車停在社區 B1-027，下樓就看得到。</p>
+      <a class="hero__where" href="#visit">怎麼走到 B1-027<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="hero__foot">
         <div class="price-tag">
@@ -630,6 +686,22 @@
     </div>
   </section>
 
+  <!-- Night band -->
+  <section class="band" aria-labelledby="band-title">
+    <picture class="band__media">
+      <source media="(max-width: 899px), (orientation: portrait), (max-height: 560px)" srcset="images/night-m.jpg" width="1200" height="900">
+      <img src="images/night.jpg" srcset="images/night-1200.jpg 1200w, images/night.jpg 2400w" sizes="100vw" alt="Tesla Model Y 夜間行駛，貫穿式尾燈發出柔和紅光的示意圖（非實車照片）" width="2400" height="1018" loading="lazy">
+    </picture>
+    <div class="band__text wrap">
+      <div class="band__copy reveal">
+        <p class="eyebrow">Rear Light Bar</p>
+        <h2 id="band-title">夜裡的那道紅</h2>
+        <p>新款 Model Y 的貫穿式尾燈採漫反射設計：光先打在內部反射面再散出來，不刺眼，是一整道柔和的紅。</p>
+      </div>
+    </div>
+    <span class="band__credit" aria-hidden="true">示意圖，非實車照片</span>
+  </section>
+
   <!-- 3. Launch Series -->
   <section class="section section--dark" id="launch" aria-labelledby="launch-title">
     <div class="wrap">
@@ -665,14 +737,14 @@
       <div class="split">
         <div class="prose reveal">
           <p><strong>3M 200G 全車保護膜。</strong>新車階段由 Wrapper House 施作（2025.07 完工），原廠車漆從一開始就在膜下，沒有直接受到日常的飛石、刮擦與洗車細紋。</p>
-          <p>保護膜目前仍保留在車上，車身外觀維持得很好、無傷。施工店家提供「施工永久保固」，保固卡可在看車時一併查看。</p>
+          <p>保護膜目前仍保留在車上，車身外觀維持得很好、無傷。施工店家提供「施工永久保固」，保固卡可在看車時一併查看。交車後每個月都回施工店做包膜維護。</p>
           <p><strong>隔熱紙。</strong>全車 Solar Gard 舒熱佳：前擋 LX25、側窗與後擋 LX15，LX 系列是頂級磁控濺射金屬膜；天窗 XE35（2025.06 施工，附原廠保固卡）。</p>
         </div>
         <ul class="list reveal">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>新車即施作 3M 200G 全車保護膜</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>原廠車漆長期在保護膜下</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>車身無傷，外觀狀況佳</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>保護膜仍在車上<small>施工店家永久保固，保固卡可於看車時查看</small></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>保護膜仍在車上<small>施工店家永久保固；每月回店維護</small></span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Solar Gard 舒熱佳隔熱紙<small>前擋 LX25、側窗與後擋 LX15（LX 系列為頂級磁控濺射金屬膜）・天窗 XE35</small></span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>原廠 20 吋 Helix 2.0 輪圈<small>輪胎規格 255/40R20</small></span></li>
         </ul>
@@ -730,6 +802,7 @@
               <li>前、後行李箱墊</li>
               <li>前行李箱燈條</li>
               <li>天窗與後擋隔熱網</li>
+              <li>原廠雨刷備品（兩組）</li>
             </ul>
           </div>
           <div>
@@ -962,6 +1035,28 @@
     update();
 
     if ('IntersectionObserver' in window) {
+      var track = document.querySelector('.subnav__track');
+      var navLinks = {};
+      track.querySelectorAll('a').forEach(function (a) { navLinks[a.getAttribute('href').slice(1)] = a; });
+      var current = null;
+      function setCurrent(id) {
+        if (id === current) return;
+        if (current && navLinks[current]) navLinks[current].removeAttribute('aria-current');
+        current = id;
+        var link = navLinks[id];
+        if (!link) return;
+        link.setAttribute('aria-current', 'true');
+        var left = link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2;
+        track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+      }
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setCurrent(e.target.id); });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      Object.keys(navLinks).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) spy.observe(el);
+      });
+
       new IntersectionObserver(function (entries) {
         atContact = entries[entries.length - 1].isIntersecting;
         syncDock();
