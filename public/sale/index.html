@@ -54,6 +54,7 @@
 <style>
   :root {
     --fs: 1;
+    --bar-h: 101px; /* top row 56 + border 1 + section index 44 */
     --ink: #0c0c0d;
     --graphite: #161719;
     --graphite-2: #1f2023;
@@ -131,11 +132,12 @@
   .subnav { height: 44px; border-top: 1px solid var(--line-dark); background: rgba(0,0,0,.55); }
   .topbar.is-solid .subnav { background: transparent; }
   .subnav__track {
+    position: relative;
     display: flex; align-items: center; gap: 4px; height: 44px;
     overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
   }
   .subnav__track::-webkit-scrollbar { display: none; }
-  @media (min-width: 980px) { .subnav__track { justify-content: center; } }
+  @media (min-width: 980px) { .subnav__track { justify-content: safe center; } }
   .subnav a {
     flex: none; padding: 6px 12px; border-radius: 999px;
     font-size: 13px; letter-spacing: .04em; white-space: nowrap;
@@ -143,7 +145,7 @@
     transition: color .2s, background-color .2s;
   }
   .subnav a:hover { color: var(--text-light); }
-  .subnav a[aria-current="true"] { color: var(--ink); background: var(--text-light); }
+  .subnav a[aria-current="location"] { color: var(--ink); background: var(--text-light); }
 
   .topbar__actions { display: flex; align-items: center; gap: 8px; }
   .topbar, .dock { --fs: 1; }
@@ -260,7 +262,7 @@
   .hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
   /* ---------- Sections ---------- */
-  section { scroll-margin-top: 100px; }
+  section { scroll-margin-top: var(--bar-h); }
   .section { padding: 72px 0; }
   @media (min-width: 720px) { .section { padding: 128px 0; } }
   .section--dark { background: var(--ink); color: var(--text-light); }
@@ -349,10 +351,10 @@
   .band__copy p:last-child { margin-top: 12px; color: #c9cbd0; font-size: calc(15px * var(--fs)); max-width: 26em; }
   .band .eyebrow { color: var(--muted-light); }
   .band__credit { top: 12px; }
-  @media (max-width: 899px), (orientation: portrait), (max-height: 560px) {
+  @media (width < 900px), (orientation: portrait), (height < 561px) {
     .band__media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(0deg, #000, rgba(0,0,0,0)); }
   }
-  @media (min-width: 900px) and (orientation: landscape) and (min-height: 561px) {
+  @media (width >= 900px) and (orientation: landscape) and (height >= 561px) {
     .band__media::after {
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(270deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 30%, rgba(0,0,0,0) 50%),
@@ -593,12 +595,11 @@
 <main id="top">
   <!-- 1. Hero -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__bg">
-      <img src="images/hero.jpg" srcset="images/hero-m.jpg 1200w, images/hero.jpg 2000w"
-           sizes="(max-width: 719px) 100vw, (orientation: portrait) 100vw, (max-height: 560px) 100vw, (min-width: 1736px) 1180px, 68vw"
-           alt="Tesla Model Y 車體示意圖（非實車照片）" width="2000" height="1170" fetchpriority="high">
-    </div>
-    <span class="hero__credit" aria-hidden="true">示意圖，非實車照片</span>
+    <picture class="hero__bg">
+      <source media="(max-width: 719px), (orientation: portrait), (max-height: 560px)" srcset="images/hero-m.jpg" width="1200" height="702">
+      <img src="images/hero.jpg" alt="2025 Tesla Model Y Quicksilver 搭配銀色 Helix 2.0 輪框（Tesla 官網同配置圖，非本車實拍）" width="2000" height="1170" fetchpriority="high">
+    </picture>
+    <span class="hero__credit" aria-hidden="true">圖片取自 Tesla 官網同配置，非本車實拍</span>
     <div class="hero__body wrap">
       <div class="hero__text">
       <p class="eyebrow">車主自售 · Private Sale</p>
@@ -630,7 +631,7 @@
       <ul class="stats">
         <li class="stat reveal"><div class="stat__value">2025</div><p class="stat__label"><b>年式</b>出廠 2025.04・領牌 2025.06</p></li>
         <li class="stat reveal"><div class="stat__value">22,000<small>km</small></div><p class="stat__label"><b>里程</b>約 2.2 萬公里</p></li>
-        <li class="stat reveal"><div class="stat__value">4.3<small>sec</small></div><p class="stat__label"><b>0–100 km/h</b>原廠內建 Acceleration Boost</p></li>
+        <li class="stat reveal"><div class="stat__value">4.3<small>sec</small></div><p class="stat__label"><b>0–100 km/h</b>首發包含 Acceleration Boost</p></li>
         <li class="stat reveal"><div class="stat__value">375<small>hp</small></div><p class="stat__label"><b>行照登記最大馬力</b>依行照登記數值</p></li>
         <li class="stat reveal"><div class="stat__value">AWD</div><p class="stat__label"><b>Long Range</b>雙馬達全輪驅動・長續航</p></li>
         <li class="stat reveal"><div class="stat__value">20<small>in</small></div><p class="stat__label"><b>Helix 2.0</b>原廠輪圈</p></li>
@@ -686,38 +687,22 @@
     </div>
   </section>
 
-  <!-- Night band -->
-  <section class="band" aria-labelledby="band-title">
-    <picture class="band__media">
-      <source media="(max-width: 899px), (orientation: portrait), (max-height: 560px)" srcset="images/night-m.jpg" width="1200" height="900">
-      <img src="images/night.jpg" srcset="images/night-1200.jpg 1200w, images/night.jpg 2400w" sizes="100vw" alt="Tesla Model Y 夜間行駛，貫穿式尾燈發出柔和紅光的示意圖（非實車照片）" width="2400" height="1018" loading="lazy">
-    </picture>
-    <div class="band__text wrap">
-      <div class="band__copy reveal">
-        <p class="eyebrow">Rear Light Bar</p>
-        <h2 id="band-title">夜裡的那道紅</h2>
-        <p>新款 Model Y 的貫穿式尾燈採漫反射設計：光先打在內部反射面再散出來，不刺眼，是一整道柔和的紅。</p>
-      </div>
-    </div>
-    <span class="band__credit" aria-hidden="true">示意圖，非實車照片</span>
-  </section>
-
   <!-- 3. Launch Series -->
   <section class="section section--dark" id="launch" aria-labelledby="launch-title">
     <div class="wrap">
       <div class="head reveal">
         <h2 id="launch-title">Launch Series<span class="zh">台灣首發限量版</span></h2>
-        <p>新款 Model Y 在台灣上市時的首批版本，台灣配額約 500 台。以 Long Range AWD 為基礎，原廠直接內建 Acceleration Boost，並帶有首發版專屬的外觀與內裝細節。</p>
+        <p>新款 Model Y 在台灣上市時的首批版本，台灣配額約 500 台。以 Long Range AWD 為基礎，首發包含 Acceleration Boost，並帶有首發版專屬的外觀與內裝細節。</p>
       </div>
       <div class="split">
         <div class="prose reveal">
-          <p>和一般 Long Range AWD 最大的差別在加速。Launch Series 出廠即內建 Acceleration Boost，0–100 km/h 約 4.3 秒，整體設定比一般 Long Range AWD 更偏向性能取向，但仍是長續航、日常好開的配置。</p>
+          <p>和一般 Long Range AWD 最大的差別在加速。Launch Series 首發包含 Acceleration Boost，0–100 km/h 約 4.3 秒，整體設定比一般 Long Range AWD 更偏向性能取向，但仍是長續航、日常好開的配置。</p>
           <p>其餘差異都在細節：車身與車內的 Launch Series 徽章、開門時的專屬迎賓投影、門檻踏板與內裝飾件。不張揚，但看得出是首發版本。</p>
-          <p class="callout">行照登記最大馬力 375 hp，Launch Series 原廠內建 Acceleration Boost，0–100 km/h 約 4.3 秒。</p>
+          <p class="callout">行照登記最大馬力 375 hp，Launch Series 首發包含 Acceleration Boost，0–100 km/h 約 4.3 秒。</p>
         </div>
         <ul class="list reveal">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Launch Series 首發限量版本<small>台灣首批，配額約 500 台（依媒體報導，官方未公布確切數量）</small></span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>原廠內建 Acceleration Boost<small>0–100 km/h 約 4.3 秒</small></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>首發包含 Acceleration Boost<small>0–100 km/h 約 4.3 秒</small></span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>行照登記最大馬力 375 hp</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Launch Series 專屬徽章</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Launch Series 專屬迎賓踏板</span></li>
@@ -908,7 +893,7 @@
               <div><dt>20 吋 Helix 2.0 輪圈</dt><dd>原車</dd></div>
               <div class="na"><dt>全黑色內裝</dt><dd>原車</dd></div>
               <div class="na"><dt>0–100 km/h</dt><dd>約 4.3 秒</dd></div>
-              <div class="na"><dt>Acceleration Boost</dt><dd>原廠內建</dd></div>
+              <div class="na"><dt>Acceleration Boost</dt><dd>首發包含</dd></div>
               <div class="na"><dt>駕駛輔助</dt><dd>基本 Autopilot</dd></div>
               <div class="na"><dt>保護膜／隔熱紙</dt><dd>3M 200G＋Solar Gard</dd></div>
               <div class="total"><dt>NT$<span class="rows__km">・約 22,000 km</span></dt><dd>2,100,000</dd></div>
@@ -998,7 +983,7 @@
       var blocks = document.querySelectorAll('.reveal');
       for (var i = 0; i < blocks.length; i++) {
         var r = blocks[i].getBoundingClientRect();
-        if (r.bottom > 64) { anchor = blocks[i]; before = r.top; break; }
+        if (r.bottom > topbar.offsetHeight + 8) { anchor = blocks[i]; before = r.top; break; }
       }
       fsIndex = (fsIndex + 1) % sizes.length;
       applyFs();
@@ -1020,11 +1005,13 @@
       dockLink.tabIndex = show ? 0 : -1;
     }
     var ticking = false;
+    var atPageEnd = function () {};
     function update() {
       ticking = false;
       topbar.classList.toggle('is-solid', window.scrollY > 40);
       var next = window.scrollY > window.innerHeight * 0.75;
       if (next !== pastHero) { pastHero = next; syncDock(); }
+      atPageEnd();
     }
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
@@ -1043,15 +1030,21 @@
         if (id === current) return;
         if (current && navLinks[current]) navLinks[current].removeAttribute('aria-current');
         current = id;
-        var link = navLinks[id];
+        var link = id && navLinks[id];
         if (!link) return;
-        link.setAttribute('aria-current', 'true');
-        var left = link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2;
-        track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+        link.setAttribute('aria-current', 'location');
+        // Instant, so it never fights the page's own smooth scroll.
+        track.scrollLeft = Math.max(0, link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2);
       }
       var spy = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) setCurrent(e.target.id); });
+        entries.forEach(function (e) {
+          if (e.isIntersecting) setCurrent(e.target.id);
+          else if (e.target.id === current) setCurrent(null);
+        });
       }, { rootMargin: '-40% 0px -55% 0px' });
+      atPageEnd = function () {
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) setCurrent('contact');
+      };
       Object.keys(navLinks).forEach(function (id) {
         var el = document.getElementById(id);
         if (el) spy.observe(el);
