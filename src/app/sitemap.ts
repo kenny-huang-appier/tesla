@@ -18,5 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${siteUrl}/sale/`,
+      lastModified: new Date("2026-10-14"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 }
