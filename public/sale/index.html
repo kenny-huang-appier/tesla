@@ -137,7 +137,7 @@
     overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
   }
   .subnav__track::-webkit-scrollbar { display: none; }
-  @media (min-width: 980px) { .subnav__track { justify-content: safe center; } }
+  @media (min-width: 980px) { .subnav__track { justify-content: center; justify-content: safe center; } }
   .subnav a {
     flex: none; padding: 6px 12px; border-radius: 999px;
     font-size: 13px; letter-spacing: .04em; white-space: nowrap;
@@ -185,7 +185,7 @@
     color: var(--text-light);
     overflow: hidden;
   }
-  .hero__bg { --hero-max: 1440px; position: absolute; z-index: 0; right: max(0px, calc((100% - var(--hero-max)) / 2)); top: 100px; width: min(68vw, 1180px); }
+  .hero__bg { --hero-max: 1440px; position: absolute; z-index: 0; right: max(0px, calc((100% - var(--hero-max)) / 2)); top: var(--bar-h); width: min(68vw, 1180px); }
   .hero__bg img { display: block; width: 100%; height: auto; }
   .hero__bg::after {
     content: ""; position: absolute; inset: 0;
@@ -198,12 +198,6 @@
       linear-gradient(0deg, #000 0%, rgba(0,0,0,.6) 26%, rgba(0,0,0,0) 48%);
   }
   .hero__text { max-width: 640px; }
-  .hero__credit, .band__credit {
-    position: absolute; z-index: 2; top: 116px;
-    right: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
-    font: 400 calc(12px * var(--fs)) var(--font-body); letter-spacing: .06em; color: rgba(255,255,255,.72);
-    text-shadow: 0 1px 6px rgba(0,0,0,.8);
-  }
   .hero__where {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
     font: 400 calc(13px * var(--fs)) var(--font-mono); letter-spacing: .1em;
@@ -213,7 +207,7 @@
   .hero__where:hover { color: var(--text-light); border-bottom-color: var(--text-light); }
   .hero__where svg { width: 14px; height: 14px; }
   @media (max-width: 719px), (orientation: portrait), (max-height: 560px) {
-    .hero { display: block; min-height: 0; padding-top: 100px; }
+    .hero { display: block; min-height: 0; padding-top: var(--bar-h); }
     .hero__bg { position: relative; inset: auto; width: auto; display: block; aspect-ratio: 2000 / 1170; }
     .hero__bg::after {
       content: ""; position: absolute; inset: auto 0 0 0; height: 40%;
@@ -221,7 +215,6 @@
     }
     .hero__bg img { height: 100%; object-fit: cover; }
     .hero::before { display: none; }
-    .hero__credit { top: 108px; }
     .hero .hero__body { padding-top: 8px; padding-bottom: 36px; }
     .hero .hero__foot { margin-top: 28px; padding-top: 20px; }
     .hero__actions .btn { flex: 1 1 0; }
@@ -350,11 +343,10 @@
   .band h2 { margin-top: 10px; font-size: calc(26px * var(--fs)); font-weight: 500; letter-spacing: .04em; }
   .band__copy p:last-child { margin-top: 12px; color: #c9cbd0; font-size: calc(15px * var(--fs)); max-width: 26em; }
   .band .eyebrow { color: var(--muted-light); }
-  .band__credit { top: 12px; }
-  @media (width < 900px), (orientation: portrait), (height < 561px) {
+  @media (max-width: 899.98px), (orientation: portrait), (max-height: 560.98px) {
     .band__media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(0deg, #000, rgba(0,0,0,0)); }
   }
-  @media (width >= 900px) and (orientation: landscape) and (height >= 561px) {
+  @media (min-width: 900px) and (orientation: landscape) and (min-height: 561px) {
     .band__media::after {
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(270deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 30%, rgba(0,0,0,0) 50%),
@@ -597,7 +589,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <picture class="hero__bg">
       <source media="(max-width: 719px), (orientation: portrait), (max-height: 560px)" srcset="images/hero-m.jpg" width="1200" height="702">
-      <img src="images/hero.jpg" alt="2025 Tesla Model Y Quicksilver 搭配銀色 Helix 2.0 輪框（Tesla 官網同配置圖，非本車實拍）" width="2000" height="1170" fetchpriority="high">
+      <img src="images/hero.jpg" srcset="images/hero-1200.jpg 1200w, images/hero.jpg 2000w" sizes="(min-width: 1736px) 1180px, 68vw" alt="2025 Tesla Model Y Quicksilver 搭配銀色 Helix 2.0 輪框（Tesla 官網同配置圖，非本車實拍）" width="2000" height="1170" fetchpriority="high">
     </picture>
     <div class="hero__body wrap">
       <div class="hero__text">
@@ -689,7 +681,7 @@
   <!-- Night band -->
   <section class="band" aria-labelledby="band-title">
     <picture class="band__media">
-      <source media="(width < 900px), (orientation: portrait), (height < 561px)" srcset="images/night-m.jpg" width="1200" height="900">
+      <source media="(max-width: 899.98px), (orientation: portrait), (max-height: 560.98px)" srcset="images/night-m.jpg" width="1200" height="898">
       <img src="images/night.jpg" srcset="images/night-1200.jpg 1200w, images/night.jpg 2400w" sizes="100vw" alt="Model Y 車尾夜景，貫穿式尾燈的柔和紅光（以 Tesla 官網同配置圖加工）" width="2400" height="1018" loading="lazy">
     </picture>
     <div class="band__text wrap">
@@ -1019,13 +1011,13 @@
       dockLink.tabIndex = show ? 0 : -1;
     }
     var ticking = false;
-    var atPageEnd = function () {};
+    var spyUpdate = function () {};
     function update() {
       ticking = false;
       topbar.classList.toggle('is-solid', window.scrollY > 40);
       var next = window.scrollY > window.innerHeight * 0.75;
       if (next !== pastHero) { pastHero = next; syncDock(); }
-      atPageEnd();
+      spyUpdate();
     }
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
@@ -1040,6 +1032,7 @@
       var navLinks = {};
       track.querySelectorAll('a').forEach(function (a) { navLinks[a.getAttribute('href').slice(1)] = a; });
       var current = null;
+      var spyIds = Object.keys(navLinks);
       function setCurrent(id) {
         if (id === current) return;
         if (current && navLinks[current]) navLinks[current].removeAttribute('aria-current');
@@ -1050,19 +1043,20 @@
         // Instant, so it never fights the page's own smooth scroll.
         track.scrollLeft = Math.max(0, link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2);
       }
-      var spy = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) setCurrent(e.target.id);
-          else if (e.target.id === current) setCurrent(null);
-        });
-      }, { rootMargin: '-40% 0px -55% 0px' });
-      atPageEnd = function () {
-        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) setCurrent('contact');
+      // Current section = last one whose top has passed 42% of the viewport;
+      // at the very bottom the last section wins even if it is short.
+      spyUpdate = function () {
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) { setCurrent(spyIds[spyIds.length - 1]); return; }
+        var line = window.innerHeight * 0.42, id = null;
+        for (var i = 0; i < spyIds.length; i++) {
+          var el = document.getElementById(spyIds[i]);
+          if (!el) continue;
+          var r = el.getBoundingClientRect();
+          if (r.top <= line && r.bottom > line) id = spyIds[i];
+        }
+        setCurrent(id);
       };
-      Object.keys(navLinks).forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) spy.observe(el);
-      });
+      spyUpdate();
 
       new IntersectionObserver(function (entries) {
         atContact = entries[entries.length - 1].isIntersecting;
