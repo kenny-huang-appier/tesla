@@ -11,3 +11,5 @@ zone_name = "orz.tw"
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+# /sale -> /sale/ (public/sale/index.html relies on this)
+html_handling = "auto-trailing-slash"
