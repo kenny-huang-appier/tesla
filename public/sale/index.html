@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2025 Tesla Model Y Launch Series｜車主自售 NT$2,100,000</title>
-<meta name="description" content="車主自售 2025 Tesla Model Y Long Range AWD Launch Series（台灣首發限量版）。Quicksilver、黑內裝、20 吋 Helix 2.0，約 22,000 km，全車 3M 200G 保護膜，Tesla 原廠配件齊全。固定價格 NT$2,100,000。">
+<title>【已售出】2025 Tesla Model Y Launch Series｜車主自售</title>
+<meta name="description" content="已售出。車主自售 2025 Tesla Model Y Long Range AWD Launch Series（台灣首發限量版）。Quicksilver、黑內裝、20 吋 Helix 2.0，約 22,000 km，全車 3M 200G 保護膜，Tesla 原廠配件齊全。固定價格 NT$2,100,000。">
 <link rel="canonical" href="https://tesla.orz.tw/sale/">
 <meta name="theme-color" content="#0c0c0d">
 <script>try{var f=localStorage.getItem('sale-fs');if(f==='l'||f==='xl')document.documentElement.setAttribute('data-fs',f)}catch(e){}</script>
@@ -12,8 +12,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:url" content="https://tesla.orz.tw/sale/">
-<meta property="og:title" content="2025 Tesla Model Y Launch Series｜車主自售">
-<meta property="og:description" content="Quicksilver・黑內裝・20 吋 Helix 2.0・約 22,000 km・全車 3M 200G 保護膜。固定價格 NT$2,100,000。">
+<meta property="og:title" content="【已售出】2025 Tesla Model Y Launch Series｜車主自售">
+<meta property="og:description" content="Quicksilver・黑內裝・20 吋 Helix 2.0・約 22,000 km・全車 3M 200G 保護膜。已售出，謝謝鄰居們的關注。">
 <meta property="og:image" content="https://tesla.orz.tw/sale/images/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -41,7 +41,7 @@
     "@type": "Offer",
     "price": 2100000,
     "priceCurrency": "TWD",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/SoldOut",
     "seller": { "@type": "Person", "name": "車主自售" }
   }
 }
@@ -54,7 +54,7 @@
 <style>
   :root {
     --fs: 1;
-    --bar-h: 101px; /* top row 56 + border 1 + section index 44 */
+    --bar-h: 137px; /* sold banner 36 + top row 56 + border 1 + section index 44 */
     --ink: #0c0c0d;
     --graphite: #161719;
     --graphite-2: #1f2023;
@@ -113,6 +113,13 @@
   :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
   /* ---------- Top bar ---------- */
+  .soldbar {
+    height: 36px; display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--text-light); color: var(--ink);
+    font-size: 14px; letter-spacing: .08em; white-space: nowrap; overflow: hidden;
+  }
+  .soldbar b { font-weight: 700; letter-spacing: .14em; }
+  .soldbar span { color: var(--muted-dark); }
   .topbar {
     position: fixed; inset: 0 0 auto 0; z-index: 50;
     color: var(--text-light);
@@ -219,7 +226,7 @@
     .hero .hero__foot { margin-top: 28px; padding-top: 20px; }
     .hero__actions .btn { flex: 1 1 0; }
   }
-  .hero__body { position: relative; z-index: 2; width: 100%; padding-top: 160px; padding-bottom: 48px; }
+  .hero__body { position: relative; z-index: 2; width: 100%; padding-top: 196px; padding-bottom: 48px; }
   .hero .eyebrow { color: var(--muted-light); }
   .hero h1 {
     margin-top: 18px;
@@ -252,6 +259,7 @@
   .price-tag__num small { font-size: calc(0.42em * var(--fs)); font-weight: 400; color: var(--muted-light); margin-right: 6px; letter-spacing: 0.04em; }
   .price-tag__note { font-size: calc(14px * var(--fs)); color: var(--muted-light); }
   .price-tag__note b { color: var(--text-light); font-weight: 500; }
+  .price-tag__note b.is-sold { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--text-light); color: var(--ink); letter-spacing: .08em; }
   .hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
   /* ---------- Sections ---------- */
@@ -562,6 +570,7 @@
 </svg>
 
 <header class="topbar" id="topbar">
+  <p class="soldbar" role="status"><b>已售出 · SOLD</b><span>謝謝鄰居們的關注</span></p>
   <div class="wrap">
     <a class="topbar__name" href="#top">Model Y <span>Launch Series</span></a>
     <div class="topbar__actions">
@@ -602,7 +611,7 @@
       <div class="hero__foot">
         <div class="price-tag">
           <span class="price-tag__num"><small>NT$</small>2,100,000</span>
-          <span class="price-tag__note"><b>固定價格 Fixed Price</b>・10/20 後可交車</span>
+          <span class="price-tag__note"><b class="is-sold">已售出 Sold</b></span>
         </div>
         <div class="hero__actions">
           <a class="btn btn--light" href="#visit">怎麼看車</a>
@@ -861,7 +870,7 @@
         <div class="reveal">
           <p class="eyebrow">Price</p>
           <h2 id="price-title" class="price-big"><small>售價</small>NT$2,100,000</h2>
-          <span class="price-badge">Fixed Price・固定價格，不議價</span>
+          <span class="price-badge">已售出 · Sold</span>
         </div>
         <div class="reveal">
           <p class="muted">售價已依車況與市場行情直接設定為實售價格，採固定價格方式出售。</p>
@@ -955,7 +964,7 @@
 </footer>
 
 <div class="dock" id="dock" aria-hidden="true">
-  <span class="dock__price"><small>固定價格</small>NT$2,100,000</span>
+  <span class="dock__price"><small>已售出</small>NT$2,100,000</span>
   <a class="btn btn--light btn--sm" href="https://line.me/ti/p/weX-WQHvTo" target="_blank" rel="noopener" tabindex="-1">LINE 聯絡<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
 </div>
 
